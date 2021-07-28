@@ -1,2 +1,3 @@
 # cy-task-examples
-Sample project to experimento with cy.task() on Cypress
+
+Sample project to experiment with `cy.task()` on Cypress.

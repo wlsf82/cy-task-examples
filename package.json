@@ -1,7 +1,7 @@
 {
   "name": "cy-task-examples",
   "version": "1.0.0",
-  "description": "Sample project to experimento with cy.task() on Cypress",
+  "description": "Sample project to experiment with cy.task() on Cypress",
   "scripts": {
     "test": "cypress open"
   },
