@@ -1,13 +1,13 @@
 // https://docs.cypress.io/api/commands/task
 
 describe('cy.task("examples")', () => {
-  it('runs a helloWorld task', () => {
+  it('runs a task that returns "Hello world!"', () => {
     cy.task('helloWorld').then(result => {
       expect(result).to.equal('Hello world!')
     })
   })
 
-  it('reads a fixture through a task', () => {
+  it('runs a task that reads a fixture', () => {
     cy.task('readExampleFixture').then(data => {
       expect(typeof(data)).to.equal('object')
       expect(data).deep.equal(
@@ -28,7 +28,7 @@ describe('cy.task("examples")', () => {
     })
   })
 
-  it('runs a greeting task that receives a string as argument', () => {
+  it('runs a task that greets based on the received string argument', () => {
     cy.task('greeting', 'Walmyr').then(result => {
       expect(result).to.equal('Hello Walmyr! How are you doing today?')
     })
