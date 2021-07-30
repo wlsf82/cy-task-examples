@@ -82,4 +82,22 @@ describe('cy.task("examples")', () => {
       console.log(stuff)
     })
   })
+
+  // Bonus: cy.visit().then(win => {})
+  it('hack the page which makes the test fail', () => {
+    // https://docs.cypress.io/api/commands/visit#Window
+    cy.visit('https://www.saucedemo.com/').then(win => {
+      win.document.querySelector('.login_password').innerHTML = `\n<h4>Password for all users:</h4><p>hacked_sauce</p>`
+    })
+
+    cy.get('.login_password p').then(el => {
+      const password = el[0].innerText
+
+      cy.get('[data-test=username]').type('standard_user')
+      cy.get('[data-test=password]').type(password)
+      cy.get('[data-test=login-button]').click()
+
+      cy.contains('.title', 'Products').should('be.visible')
+    })
+  })
 })
