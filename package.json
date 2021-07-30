@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Sample project to experiment with cy.task() on Cypress",
   "scripts": {
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "test": "cypress run"
   },
   "keywords": [
     "Cypress.io",
