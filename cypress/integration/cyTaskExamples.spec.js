@@ -10,6 +10,7 @@ describe('cy.task("examples")', () => {
   it('runs a task that reads a fixture', () => {
     cy.task('readExampleFixture').then(data => {
       expect(typeof(data)).to.equal('object')
+      expect(data.email).to.equal('hello@cypress.io')
       expect(data).deep.equal(
         {
           "name": "Using fixtures to represent data",
@@ -17,7 +18,6 @@ describe('cy.task("examples")', () => {
           "body": "Fixtures are a great way to mock data for responses to routes"
         }        
       )
-      expect(data.email).to.equal('hello@cypress.io')
     })
   })
 
