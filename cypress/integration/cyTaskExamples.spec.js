@@ -35,18 +35,14 @@ describe('cy.task("examples")', () => {
   })
 
   it('runs a task that receives an object as argument', () => {
-    cy.task('getMyObjectWith', {
+    const myObject = {
       name: 'Walmyr',
-      age: 39,
-      sex: 'M'
-    }).then(result => {
-      expect(result).deep.equal(
-        {
-          name: 'Walmyr',
-          age: 39,
-          sex: 'M'
-        }
-      )
+      age: '39',
+      sex: 'm'
+    }
+
+    cy.task('getMyObjectWith', myObject).then(result => {
+      expect(result).deep.equal(myObject)
     })
   })
 
